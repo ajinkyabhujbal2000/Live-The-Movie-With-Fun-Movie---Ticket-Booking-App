@@ -1,0 +1,174 @@
+
+<div id="space">
+  <div id="sidebar">
+      <a [routerLink]="['/theatre', 'add']" [queryParams]="{ method: 'add' }" class="methodAnchor"><button class="methodButton">Add Theatre</button></a><br>
+      <a [routerLink]="['/theatre', 'update']" [queryParams]="{ method: 'update' }" class="methodAnchor"><button class="methodButton">Update Ticket Cost</button></a><br>
+      <a [routerLink]="['/theatre', 'viewAll']" [queryParams]="{ method: 'viewAll' }" class="methodAnchor"><button (click)="viewAllTheatres()" class="methodButton">View All Theatre</button></a><br>
+      <a [routerLink]="['/theatre', 'view-by-id']" [queryParams]="{ method: 'view-by-id' }" class="methodAnchor"><button class="methodButton">View Theatre By ID</button></a><br>
+      <a [routerLink]="['/theatre', 'view-by-city']" [queryParams]="{ method: 'view-by-city' }" class="methodAnchor"><button class="methodButton">View Theatre By City And Ticket Cost</button></a><br>
+  </div>
+
+  <div id="field">
+
+      
+      <div *ngIf="method === 'viewAll'">
+      <h5 align="center" class="caption">VIEW ALL THEATRES</h5>    
+      <div class="fixTableHead"> 
+      <table> 
+      <thead> 
+          <tr> 
+              <th>Theatre ID</th>
+              <th>Theatre Name</th>
+              <th>City</th>
+              <th>Capacity Of Each Screen</th>
+              <th>Total Screens</th>
+              <th>TicketCost</th>
+          </tr> 
+      </thead> 
+  
+      <tbody> 
+          <tr *ngFor="let theatre of theatres">
+            <td>{{ theatre.theatreId }}</td>
+            <td>{{ theatre.theatreName }}</td>
+            <td>{{ theatre.city }}</td>
+            <td>{{ theatre.capacityOfEachScreen }}</td>
+            <td>{{ theatre.totalScreens }}</td>
+            <td>{{ theatre.ticketCost }}</td>
+          </tr>
+      </tbody> 
+          
+      </table> 
+      </div> 
+      <div class="viewAllMsgDiv" align="center">
+         <p class="successMsg"><b>{{message}}</b></p>
+          <p class="errorMsg"><b>{{errorMessage}}</b></p>
+      </div>
+      </div>
+
+
+
+      
+      <div *ngIf="method === 'add'"> 
+      <h5 align="center" class="caption">ADD THEATRE</h5>
+      <div id="adddiv" align="center">
+      
+      <input type="text" id="theatreId" [(ngModel)]="newTheatre.theatreId" class="input" placeholder=" Enter Theatre ID"/>
+      <input type="text" id="theatreName" [(ngModel)]="newTheatre.theatreName" class="input" placeholder=" Enter Theatre Name"/><br>
+      <input type="text" id="city" [(ngModel)]="newTheatre.city" class="input" placeholder=" Enter City"/>
+      <input type="number" id="capacityOfEachScreen" [(ngModel)]="newTheatre.capacityOfEachScreen" class="input" placeholder=" Enter Capacity of each Screen" max="300" min="100"/><br>
+      <input type="number" id="totalScreens" [(ngModel)]="newTheatre.totalScreens" class="input" placeholder=" Enter no. of Screen" max="10" min="1"/>
+      <input type="number" id="ticketCost" [(ngModel)]="newTheatre.ticketCost" class="input" placeholder=" Enter Ticket Cost" max="250" min="2500"/><br>
+      <button class="addButton" (click)="addTheatre(newTheatre)">Add</button>
+      <div class="addMsgDiv">
+          <p class="successMsg"><b>{{message}}</b></p>
+          <p class="errorMsg"><b>{{errorMessage}}</b></p>
+      </div>
+      </div>
+
+      </div>
+
+
+
+
+      
+      <div *ngIf="method === 'view-by-id'">
+          <h5 align="center" class="caption">VIEW THEATRE BY THEATRE ID</h5>
+          <div id="inputDiv" align="center">
+              <input type="text" id="viewTheatreId" [(ngModel)]="viewTheatreId" class="input" placeholder=" Enter Theatre ID"/><button (click)="viewTheatreByID(viewTheatreId)" class="searchButton">Search</button>
+          </div>
+          <br>
+          <div class="searchMsgDiv" align="center">
+              <p class="successMsg"><b>{{message}}</b></p>
+              <p class="errorMsg"><b>{{errorMessage}}</b></p>
+          </div>
+          <br>
+          <br>
+          <div class="fixTableHead" class="resultDiv"> 
+              <table> 
+              <thead> 
+                  <tr> 
+                      <th>Theatre ID</th>
+                      <th>Theatre Name</th>
+                      <th>City</th>
+                      <th>Capacity Of Each Screen</th>
+                      <th>Total Screens</th>
+                      <th>ticketCost</th>
+                  </tr>
+              </thead>  
+              <tbody>
+                <!--*ngFor="let theatre of theatres"--> 
+                <tr >
+                  <td>{{ th.theatreId }}</td>
+                  <td>{{ th.theatreName }}</td>
+                  <td>{{ th.city }}</td>
+                  <td>{{ th.capacityOfEachScreen }}</td>
+                  <td>{{ th.totalScreens }}</td>
+                  <td>{{ th.ticketCost }}</td> 
+                </tr>
+              </tbody> 
+              </table> 
+          </div>
+      </div>
+
+
+      
+      
+      <div *ngIf="method === 'view-by-city'">
+          <h5 align="center" class="caption">VIEW THEATRE BY CITY AND TICKET COST</h5>
+          <div id="inputDiv" align="center">
+              <input type="text" id="viewCity" [(ngModel)]="viewCity" class="input" placeholder=" Enter City Name"/><input type="text" id="viewTicketCost" [(ngModel)]="viewTicketCost" class="input" placeholder=" Enter Ticket Cost"/><button (click)="viewTheatreByCityAndTicketCost(viewCity, viewTicketCost)" class="searchButton">Search</button>
+          </div>
+          <br>
+          <div class="msgDiv" align="center">
+              <p class="successMsg"><b>{{viewCityTicketMessage}}</b></p>
+              <p class="errorMsg"><b>{{viewCityTicketErrorMessage}}</b></p>
+          </div>
+          <br>
+          <div class="resultDiv"> 
+              <table> 
+                  <thead> 
+                      <tr> 
+                          <th>Theatre ID</th>
+                          <th>Theatre Name</th>
+                          <th>City</th>
+                          <th>Capacity Of Each Screen</th>
+                          <th>Total Screens</th>
+                          <th>ticketCost</th>
+                      </tr> 
+                  </thead> 
+              
+                  <tbody> 
+                    <tr *ngFor="let t of th1" ><!---->
+                        <td>{{ t.theatreId }}</td>
+                        <td>{{ t.theatreName }}</td>
+                        <td>{{ t.city }}</td>
+                        <td>{{ t.capacityOfEachScreen }}</td>
+                        <td>{{ t.totalScreens }}</td>
+                        <td>{{ t.ticketCost }}</td> 
+                      </tr>
+                  </tbody> 
+              </table> 
+          </div>
+      </div>
+
+
+
+      
+      <div *ngIf="method === 'update'">
+          <h5 align="center" class="caption">UPDATE TICKET COST BY THEATRE ID</h5>
+          <div id="inputDiv" align="center">
+              <input type="text" id="updateTheatreId" [(ngModel)]="updateTheatreId" class="input" placeholder=" Enter Theatre ID"/><br>
+              <input type="number" id="updateTicketCost" [(ngModel)]="updatedTicketCost" class="input" placeholder=" Enter Ticket Cost" min="250" max="2500"/><br>
+              <button class="updateButton" (click)="updateTicketCost(updateTheatreId,updatedTicketCost)">Update</button>
+          </div>
+          <br>
+          <div class="updateMsgDiv" align="center">
+              <p class="successMsg"><b>{{message}}</b></p>
+              <p class="errorMsg"><b>{{errorMessage}}</b></p>
+          </div>
+      </div>
+
+  
+
+  </div>
+</div>

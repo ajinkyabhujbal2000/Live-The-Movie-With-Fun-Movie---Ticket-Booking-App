@@ -1,0 +1,68 @@
+
+
+*{
+    margin: 0;
+    padding:0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+}
+
+#funmovie{
+    color: white;
+}
+
+header{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+}
+
+#logo{
+    /* font-size: 30px; */
+    font-weight: bold;
+    /* color: white; */
+    letter-spacing: 1.5px;
+    cursor: pointer;
+}
+
+#logoa{
+    color: white;
+    font-size: xx-large;
+}
+
+nav li{
+    display: inline-block;
+    list-style: none;
+    padding: 0px 20px;
+}
+
+a{
+    font-size: 16px;
+    font-weight: 500;
+    color: grey;
+    text-decoration: none;
+    cursor: pointer;
+}
+nav li a:hover{
+    color: white;
+    
+}
+
+.menuButton{
+    background: white;
+    color: #566573;
+    border-radius: 30px;
+    padding: 3px 10px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.menuButton:hover{
+    background: #566573;
+    color: white;
+}
+
+#hr{
+    background-color: white;
+}

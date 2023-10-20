@@ -1,0 +1,676 @@
+
+<!-- Conditionally render sections based on the selected method -->
+
+<!-- <div class="AddScheme" *ngIf="method === 'add'">
+
+    <h3>Add Movie</h3>
+
+    <form (submit)="addMovie()">
+
+      <div class="form-group">
+
+        <label for="movieId">Movie ID:</label>
+
+        <input type="text" id="movieId" [(ngModel)]="movieId" name="movieId" required>
+
+      </div>
+
+ 
+
+      <div class="form-group">
+
+        <label for="movieName">Movie Name:</label>
+
+        <input type="text" id="movieName" [(ngModel)]="movieName" name="movieName" required>
+
+      </div>
+
+ 
+
+      <div class="form-group">
+
+        <label for="directorName">Director Name:</label>
+
+        <input type="text" id="directorName" [(ngModel)]="directorName" name="directorName" required>
+
+      </div>
+
+ 
+
+      <div class="form-group">
+
+        <label for="certification">Certification:</label>
+
+        <input type="text" id="certification" [(ngModel)]="certification" name="certification" required>
+
+      </div>
+
+ 
+
+      <div class="form-group">
+
+        <label for="duration">Duration (minutes):</label>
+
+        <input type="number" id="duration" [(ngModel)]="duration" name="duration" required>
+
+      </div>
+
+ 
+
+  
+    <div class="form-group">
+
+        <label for="language">Language:</label>
+
+        <input type="text" id="language" [(ngModel)]="language" name="language" required>
+
+      </div>
+
+ 
+
+
+      <div class="form-group">
+
+        <label for="movieRating">Movie Rating:</label>
+
+        <input type="text" id="movieRating" [(ngModel)]="movieRating" name="movieRating" required>
+
+      </div>
+
+      <button type="submit">Add Movie</button>
+
+    </form>
+
+    <p>{{ successMessage }}</p>
+
+    <p>{{ errorMessage }}</p>
+
+  </div>
+-->
+ 
+
+ 
+
+<!-- <div class="AddScheme" *ngIf="method === 'update'">
+
+  <h3>Update Duration</h3>
+
+  <form (submit)="updateDuration()">
+
+    <label for="updateMovieId">Movie Id:</label>
+
+    <input type="text" id="updateMovieId" [(ngModel)]="movieId" name="movieId" required>
+
+    <label for="newDuration">New Duration:</label>
+
+    <input type="number" id="newDuration" [(ngModel)]="newDuration" name="newDuration" required>
+
+    <button type="submit">Update</button>
+
+  </form>
+
+  <p>{{ successMessage }}</p>
+
+  <p>{{ errorMessage }}</p>
+
+</div> -->
+
+ 
+
+<!-- <div class="AddScheme" *ngIf="method === 'view-all'">
+
+  <h3>View All Movies</h3>
+
+  <button (click)="viewAll()">View All</button>
+
+  <p>{{ successMessage }}</p>
+
+  <p>{{ errorMessage }}</p>
+
+  <h4>{{movies | json}}</h4>
+
+ <table>
+
+    <thead>
+
+      <tr>
+
+        <th>Theatre Id</th>
+
+        <th>Theatre Name</th>
+
+        <th>City</th>
+
+        <th>Capacity of Each Screen</th>
+
+        <th>Total Screens</th>
+
+        <th>Ticket Cost</th>
+
+      </tr>
+
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let theatre of theatres">
+
+       
+
+        <td>{{ theatre.theatreId }}</td>
+
+        <td>{{ theatre.theatreName }}</td>
+
+        <td>{{ theatre.city }}</td>
+
+        <td>{{ theatre.capacityOfEachScreen }}</td>
+
+        <td>{{ theatre.totalScreens }}</td>
+
+        <td>{{ theatre.ticketCost }}</td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+</div> -->
+
+ 
+
+<!-- <div class="AddScheme" *ngIf="method === 'view-by-id'">
+
+  <h3>View Movie By ID</h3>
+
+  <form (submit)="viewMovieByID()">
+
+    <label for="viewMovieId">Movie ID:</label>
+
+    <input type="text" id="viewMovieId" [(ngModel)]="movieId" name="movieId" required>
+
+    <button type="submit">View</button>
+
+  </form>
+
+  <p>{{ successMessage }}</p>
+
+  <p>{{ errorMessage }}</p>
+
+  <h4>{{movies | json}}</h4>
+
+ 
+
+  <table>
+
+  </table>
+
+</div> -->
+
+ 
+
+<!-- <div class="AddScheme" *ngIf="method === 'view-by-director-and-certification'">
+
+  <h3>View Movie By Director Name and Certification</h3>
+
+  <form (submit)="viewMovieByDirectorNameAndCertification()">
+
+    <label for="directorName">Director Name:</label>
+
+    <input type="text" id="directorName" [(ngModel)]="directorName" name="directorName" required>
+
+    <label for="certification">Certification:</label>
+
+    <input type="text" id="certification" [(ngModel)]="certification" name="certification" required>
+
+    <button type="submit">View</button>
+
+  </form>
+
+  <p>{{ successMessage }}</p>
+
+  <p>{{ errorMessage }}</p>
+
+  <h4>{{movies | json}}</h4>
+
+ 
+
+  <table>
+
+  </table>
+
+</div> -->
+
+ 
+
+ 
+
+<!-- <div class="AddScheme" *ngIf="method === 'count-director'">
+
+  <h3>Movie Count Directorwise</h3>
+
+  <button (click)="getMovieCountDirectorWise()">Get Movie Count</button>
+
+  <p>{{ successMessage }}</p>
+
+  <p>{{ errorMessage }}</p>
+
+  <h4>{{movies | json}}</h4>
+
+  <table>
+
+  </table>
+
+</div> -->
+
+ 
+
+<!--
+
+<div class="AddScheme" *ngIf="method === 'view-by-theatre'">
+
+  <h3>View Movie By Theatre</h3>
+
+  <form (submit)="viewMovieByTheatre()">
+
+    <label for="theatreId">Theatre ID:</label>
+
+    <input type="text" id="theatreId" [(ngModel)]="theatreId" name="theatreId" required>
+
+    <button type="submit">View</button>
+
+  </form>
+
+  <p>{{ successMessage }}</p>
+
+  <p>{{ errorMessage }}</p>
+
+  <table>
+
+  </table>
+
+</div>
+
+ 
+
+<div class="AddScheme" *ngIf="method === 'max-booking'">
+
+  <h3>View Movie With Maximum Booking</h3>
+
+  <button (click)="viewMovieWithMaxBooking()">View Max Booking</button>
+
+  <p>{{ successMessage }}</p>
+
+  <p>{{ errorMessage }}</p>
+
+  <table>
+
+  </table>
+
+</div> -->
+
+
+
+<!-- 
+  
+ -->
+ <!-- 
+
+  -->
+
+  <div id="space">
+    <div id="sidebar">
+        <a [routerLink]="['/movie', 'add']" [queryParams]="{ method: 'add' }" class="methodAnchor"><button class="methodButton">Add Movie</button></a><br>
+        <a [routerLink]="['/movie', 'update']" [queryParams]="{ method: 'update' }" class="methodAnchor"><button class="methodButton">Update Duration</button></a><br>
+        <a [routerLink]="['/movie', 'viewAll']" [queryParams]="{ method: 'viewAll' }" class="methodAnchor"><button (click)="viewAll()" class="methodButton">View All Movies</button></a><br>
+        <a [routerLink]="['/movie', 'view-by-id']" [queryParams]="{ method: 'view-by-id' }" class="methodAnchor"><button class="methodButton">View Movie By ID</button></a><br>
+        <a [routerLink]="['/movie', 'view-by-director-and-certification']" [queryParams]="{ method: 'view-by-director-and-certification' }" class="methodAnchor"><button class="methodButton">View Movie By Director Name And Certification</button></a><br>
+    </div>
+
+    <div id="field">
+
+        <!-- VIEW ALL MOVIES -->
+        <div *ngIf="method === 'viewAll'">
+        <h5 align="center" class="caption">VIEW ALL MOVIES</h5>    
+        <div class="fixTableHead"> 
+        <table> 
+        <thead> 
+            <tr> 
+                <th>Movie ID</th>
+                <th>Movie Name</th>
+                <th>Director Name</th>
+                <th>Language</th>
+                <th>Certification</th>
+                <th>Duration</th>
+                <th>Ratings</th>
+            </tr> 
+        </thead> 
+    
+        <tbody> 
+          <tr *ngFor="let movie of movies">
+            <td>{{ movie.movieId }}</td>
+            <td>{{ movie.movieName }}</td>
+            <td>{{ movie.directorName }}</td>
+            <td>{{ movie.language }}</td>
+            <td>{{ movie.certification }}</td>
+            <td>{{ movie.duration }}</td>
+            <td>{{ movie.movieRating }}</td>
+          </tr>
+        </tbody> 
+            
+        </table> 
+        </div> 
+        <div class="viewAllMsgDiv" align="center">
+           <p class="successMsg"><b>{{successMessage}}</b></p>
+            <p class="errorMsg"><b>{{errorMessage}}</b></p>
+        </div>
+        </div>
+
+
+
+        <!-- ADD MOVIE -->
+        <div *ngIf="method === 'add'"> 
+        <h5 align="center" class="caption">ADD MOVIE</h5>
+        <div id="adddiv" align="center">
+        <form (submit)="addMovie()">
+        <input type="text" id="movieId" [(ngModel)]="movieId" name="movieId" required class="input" placeholder=" Enter Movie ID"/>
+        <input type="text" id="movieName" [(ngModel)]="movieName" name="movieName" required class="input" placeholder=" Enter Movie Name"/><br>
+        <input type="text" id="directorName" [(ngModel)]="directorName" name="directorName" required class="input" placeholder=" Enter Director Name"/>
+        <select class="inputdd" id="language" [(ngModel)]="language" name="language" required>
+            <option value="" selected disabled>Select Language</option>
+            <option value="Hindi">Hindi</option>
+            <option value="English">English</option>
+            <option value="Malyalam">Malyalam</option>
+            <option value="Bengali">Bengali</option> 
+            <option value="Telugu">Telugu</option>
+            <option value="Marathi">Marathi</option>
+            <option value="Tamil">Tamil</option>
+            <option value="Kannada">Kannada</option>
+        </select><br> 
+        <div class="radioDiv" align="center">
+        <input class="radioButton" type="radio" id="certification" [(ngModel)]="certification" name="certification" value="U" align="center">
+        <label class="radiovalue" for="uOption">U</label>&nbsp;&nbsp;
+        <input class="radioButton" type="radio" id="certification" [(ngModel)]="certification" name="certification" value="U-A" align="center">
+        <label class="radiovalue" for="uaOption">U/A</label>&nbsp;&nbsp;
+        <input class="radioButton" type="radio" id="certification" [(ngModel)]="certification" name="certification" value="A" align="center">
+        <label class="radiovalue" for="aOption">A</label>
+        </div>
+        <br>
+        <input type="number" id="duration" [(ngModel)]="duration" name="duration" required class="input" placeholder=" Enter Duration" min="60" max="200"/>
+        <input type="number" id="movieRating" [(ngModel)]="movieRating" name="movieRating" required class="input" placeholder=" Enter Rating" min="0" max="10"/>
+        <br>
+        <button type="submit" class="addButton">Add</button>
+        </form>
+        <div class="addMsgDiv">
+            <p class="successMsg"><b>{{successMessage}}</b></p>
+            <p class="errorMsg"><b>{{errorMessage}}</b></p>
+        </div>
+        </div> 
+
+        </div>
+
+
+        <!-- VIEW MOVIE BY MOVIE ID -->
+        <div *ngIf="method === 'view-by-id'">
+            <h5 align="center" class="caption">VIEW MOVIE BY MOVIE ID</h5>
+            <div id="inputDiv" align="center">
+              <form (submit)="viewMovieByID()">
+                <input type="text" id="viewMovieId" [(ngModel)]="movieId" name="movieId" required class="input" placeholder=" Enter Movie ID"/><button type="submit" class="searchButton">Search</button>
+              </form>
+            </div>
+            <br>
+            <div class="searchMsgDiv" align="center">
+                <p class="successMsg"><b>{{successMessage}}</b></p>
+                <p class="errorMsg"><b>{{errorMessage}}</b></p>
+            </div>
+            <br>
+            <br>
+            <div class="fixTableHead" class="resultDiv"> 
+                <table> 
+                <thead> 
+                    <tr> 
+                        <th>Movie ID</th>
+                        <th>Movie Name</th>
+                        <th>Director Name</th>
+                        <th>Language</th>
+                        <th>Certification</th>
+                        <th>Duration</th>
+                        <th>Rating</th>
+                    </tr> 
+                </thead>  
+                <tbody> 
+                    <tr ><!--*ngFor="let movie of movies"-->
+                      <td>{{ mo.movieId }}</td>
+                      <td>{{ mo.movieName }}</td>
+                      <td>{{ mo.directorName }}</td>
+                      <td>{{ mo.language }}</td>
+                      <td>{{ mo.certification }}</td>
+                      <td>{{ mo.duration }}</td>
+                      <td>{{ mo.movieRating }}</td>
+                    </tr>
+                </tbody> 
+                </table> 
+            </div>
+        </div>
+
+
+        
+        <!-- VIEW MOVIES BY DIRECTOR NAME AND CERTIFICATION -->
+        <div *ngIf="method === 'view-by-director-and-certification'">
+            <h5 align="center" class="caption">VIEW MOVIES BY DIRECTOR NAME AND CERTIFICATION</h5>
+            <div id="inputDiv" align="center">
+              <form (submit)="viewMovieByDirectorNameAndCertification()">
+                <input type="text" id="directorName" [(ngModel)]="directorName" name="directorName" required class="input" placeholder=" Enter Director Name"/><input type="text" id="certification" [(ngModel)]="certification" name="certification" required class="input" placeholder=" Enter Movie Certification"/><button type="submit" class="searchButton">Search</button>
+              </form>  
+            </div>
+            <br>
+            <div class="msgDiv" align="center">
+                <p class="successMsg"><b>{{successMessage}}</b></p>
+                <p class="errorMsg"><b>{{errorMessage}}</b></p>
+            </div>
+            <br>
+            <div class="resultDiv"> 
+                <table> 
+                <thead> 
+                    <tr> 
+                        <th>Movie ID</th>
+                        <th>Movie Name</th>
+                        <th>Director Name</th>
+                        <th>Language</th>
+                        <th>Certification</th>
+                        <th>Duration</th>
+                        <th>Rating</th>
+                    </tr> 
+                </thead>  
+                <tbody> 
+                    <tr *ngFor="let m of mo1">
+                        <td>{{ m.movieId }}</td>
+                        <td>{{ m.movieName }}</td>
+                        <td>{{ m.directorName }}</td>
+                        <td>{{ m.language }}</td>
+                        <td>{{ m.certification }}</td>
+                        <td>{{ m.duration }}</td>
+                        <td>{{ m.movieRating }}</td>
+                    </tr>
+                </tbody> 
+                </table> 
+            </div>
+        </div>
+
+
+
+        <!--UPDATE MOVIE DURATION BY MOVIE ID -->
+        <div *ngIf="method === 'update'">
+            <h5 align="center" class="caption">UPDATE MOVIE DURATION BY MOVIE ID</h5>
+            <div id="inputDiv" align="center">
+              <form (submit)="updateDuration()">
+                <input type="text" id="updateMovieId" [(ngModel)]="movieId" name="movieId" required class="input" placeholder=" Enter Movie ID"/><br>
+                <input type="number" id="newDuration" [(ngModel)]="newDuration" name="newDuration" required class="input" placeholder=" Enter Update Duration" min="60" max="200"/><br>
+                <button type="submit" class="updateButton">Update</button>
+              </form>
+            </div>
+            <br>
+            <div class="updateMsgDiv" align="center">
+                <p class="successMsg"><b>{{successMessage}}</b></p>
+                <p class="errorMsg"><b>{{errorMessage}}</b></p>
+            </div>
+        </div>
+
+        <!--  -->
+        <!--  -->
+        <!--  -->
+
+        <!-- VIEW MOVIE BY DIRECTORS NAME AND MOVIE COUNT WISE -->
+        <!-- <div>
+        <h5 align="center" class="caption">VIEW MOVIE BY DIRECTORS NAME AND MOVIE COUNT WISE</h5>
+        <div class="fixTableHead"> 
+            <table> 
+            <thead> 
+                <tr> 
+                    <th>Director Name</th>
+                    <th>Movie Count</th>
+                </tr> 
+            </thead>  
+            <tbody> 
+                <tr>
+                    <td>Yash Raj Solanki</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>Ajinkya Bhujbal</td>
+                    <td>7</td>
+                </tr>
+            </tbody> 
+            </table> 
+        </div>
+        <div class="viewAllMsgDiv" align="center">
+            <p class="successMsg"><b>I AM SUCCESS MESSAGE</b></p>
+            <!-- <p class="errorMsg"><b>I AM ERROR MESSAGE</b></p>
+        </div>
+        </div> -->
+
+
+        <!-- VIEW MOVIE BY THEATRE ID -->
+        <!-- <div>
+            <h5 align="center" class="caption">VIEW MOVIE BY THEATRE ID</h5>
+            <div id="inputDiv" align="center">
+                <input type="text" class="input" placeholder=" Enter Theatre ID"/><button class="searchButton">Search</button>
+            </div>
+            <br>
+            <div class="msgDiv" align="center">
+                <p class="successMsg"><b>I AM SUCCESS MESSAGE</b></p>
+                <!-- <p class="errorMsg"><b>I AM ERROR MESSAGE</b></p>
+            </div>
+            <br>
+            <div class="fixTableHead" class="resultDiv"> 
+                <table> 
+                <thead> 
+                    <tr> 
+                        <th>Movie ID</th>
+                        <th>Movie Name</th>
+                        <th>Director Name</th>
+                        <th>Language</th>
+                        <th>Certification</th>
+                        <th>Duration</th>
+                        <th>Rating</th>
+                    </tr> 
+                </thead>  
+                <tbody> 
+                    <tr>
+                        <td>1</td>
+                        <td>Sanam Teri Kasam</td>
+                        <td>Ajinkya Bhujbal</td>
+                        <td>English</td>
+                        <td>U-A</td>
+                        <td>120</td>
+                        <td>4.5</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Sanam Teri Kasam</td>
+                        <td>Ajinkya Bhujbal</td>
+                        <td>English</td>
+                        <td>U-A</td>
+                        <td>120</td>
+                        <td>4.5</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Sanam Teri Kasam</td>
+                        <td>Ajinkya Bhujbal</td>
+                        <td>English</td>
+                        <td>U-A</td>
+                        <td>120</td>
+                        <td>4.5</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Sanam Teri Kasam</td>
+                        <td>Ajinkya Bhujbal</td>
+                        <td>English</td>
+                        <td>U-A</td>
+                        <td>120</td>
+                        <td>4.5</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Sanam Teri Kasam</td>
+                        <td>Ajinkya Bhujbal</td>
+                        <td>English</td>
+                        <td>U-A</td>
+                        <td>120</td>
+                        <td>4.5</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Sanam Teri Kasam</td>
+                        <td>Ajinkya Bhujbal</td>
+                        <td>English</td>
+                        <td>U-A</td>
+                        <td>120</td>
+                        <td>4.5</td>
+                    </tr>
+                </tbody> 
+                </table> 
+            </div>
+        </div> -->
+
+
+        <!-- VIEW MOVIE WITH MAXIMUM BOOKING -->
+        <!-- <div>
+        <h5 align="center" class="caption">MOVIE WITH MAXIMUM BOOKING</h5>
+        <div class="fixTableHead"> 
+            <table>   
+            <thead> 
+                <tr> 
+                    <th>Movie ID</th>
+                    <th>Movie Name</th>
+                    <th>Director Name</th>
+                    <th>Language</th>
+                    <th>Certification</th>
+                    <th>Duration</th>
+                    <th>Rating</th>
+                </tr> 
+            </thead>  
+            <tbody> 
+                <tr>
+                    <td>1</td>
+                    <td>Sanam Teri Kasam</td>
+                    <td>Ajinkya Bhujbal</td>
+                    <td>English</td>
+                    <td>U-A</td>
+                    <td>120</td>
+                    <td>4.5</td>
+                </tr>
+            </tbody> 
+            </table> 
+        </div>
+        <div class="viewAllMsgDiv" align="center">
+            <p class="successMsg"><b>I AM SUCCESS MESSAGE</b></p>
+             <!-- <p class="errorMsg"><b>I AM ERROR MESSAGE</b></p>
+        </div>
+        </div> -->
+    
+
+    </div>
+</div>
